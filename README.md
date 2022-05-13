@@ -51,11 +51,126 @@ rasa shell                  # This will run an interactive terminal for you to i
 
 8. There you have it. You can now interact with the chatbot as you please!
 
-## **Conversation flows that you can use**
+## **Conversation flows**
 
+Currently supported API calls to retrieve race information are:
+1. latest race result
+2. latest qualify result
+3. current season schedule
 
+Other supported queries by the bot:
+1. You can ask for a joke (it's going to tell you an F1 joke)
+2. You can ask for it to submit a feedback form that is uploaded to the database
+3. Bot can engage in small talk
+
+* Conversation flow to directly ask for race result:
+In this flow, you can ask for anything instead of race result (like qualify or schedule). 
+```
+Your input ->  Hi
+
+                                        Bot -> Hey! How are you?
+
+Your input ->  Im fine, how are you?
+
+                                        Bot -> Thanks for asking, I'm fine. What can I do for you?
+
+Your input ->  Can you get me the latest race result?
+
+                                        Bot -> Here's the latest race result:
+                                            Race 5, season 2022, took place at miami, at Miami International Autodrome circuit
+                                            Standings:
+                                            Position 1, points obtained : 26 - Driver: Max Verstappen, Number: 33, driving for Red Bull.
+                                            Position 2, points obtained : 18 - Driver: Charles Leclerc, Number: 16, driving for Ferrari.
+                                            Position 3, points obtained : 15 - Driver: Carlos Sainz, Number: 55, driving for Ferrari.
+                                            __________________________________
+                                            Is there something else I can help you with?
+
+Your input ->  Nope
+
+                                        Bot -> Cool! Let me know.
+
+Your input ->  Sure, bye
+
+                                        Bot -> Bye bye
+``` 
+
+**One more feature that is highlited here is that the bot will ask appropriate questions based on the user input.**
+In the flow below, you can see in the first reply, the bot asks the user "Holla! How you doin?". If your input is something like "Im fine" i.e. without a follow up question, then the bot replies with something like "Great! What can I do for you?" (This is described in the flow below). However if your input to the question "Hi! How are you doing?" includes a question, like "I'm fine, how are you?" (as shown in the flow above), then the bot will reply with something like "Thanks for asking, I'm fine. What can I do for you?".
+
+* Conversation flow for small talk 1: If the user doesn't know what the chatbot does, the user can ask the bot directly. You can also ask to retrieve information afterwards. 
+```
+Your input ->  Hi
+
+                                        Bot -> Holla! How you doin?
+
+Your input ->  in fine
+
+                                        Bot -> Great! What can I do for you?
+
+Your input ->  not sure, what can you do for me?
+
+                                        Bot -> You can ask me about Formula 1 stuff. For example you can ask me to get the latest race results.
+
+Your input ->  Cool
+
+                                        Bot -> Okie dokie
+```
+
+* Conversation flow for small talk 2: User can ask for jokes, and play around with the bot. If you complain to the bot that the jokes aren't funny, then it will respond appropriately. 
+```
+Your input ->  Hi
+
+                                        Bot -> Holla! How you doin?
+
+Your input ->  Im fine how are you
+
+                                        Bot -> I'm great, thanks for asking! What can I do for you today?
+
+Your input ->  I feel sad
+
+                                        Bot -> This ought to cheer you up!:
+                                            Image: https://i.imgur.com/XHZH8SW.jpeg
+                                            Did that help you?
+
+Your input ->  Yes
+
+                                        Bot -> I'm glad!!!
+
+Your input ->  That wasn't enough. Can yoiu tell me a joke too?
+
+                                        Bot -> Here's a joke for you.\n\n
+                                            Why is the white bishop piece in chess the fastest? Because it's on F1.
+
+Your input ->  It's not funny
+
+                                        Bot -> I know right? My creator chose them. (But they are all terrible tbh..... don't tell him I said that!)
+
+Your input ->  who are you btw?
+
+                                        Bot -> My name is BOTas (get it?). I can retrieve information about Formula 1.
+
+Your input ->  are you human?
+
+                                        Bot -> I BOTas (get it?), a bot powered by Rasa.
+```
+Conversation Flow to provide feedback: This will upload the given feedback to the database using SQL in the actions server.
+
+**One of the flaws of my implemented feedback form is instead of enabliung text inpout for forms, I have defined first name and last name along with the feedvback in the nlu file which makes it so only defined feedback and names are taken as input.**
+```
+Your input ->  Can I provide feedback?
+                                        Bot -> Your first name?
+Your input ->  Anshul
+                                        Bot -> Your last name?
+Your input ->  Kumar
+                                        Bot -> Your feedback?
+Your input ->  good
+                                        Bot -> Name: Anshul Kumar
+                                            Feedback: good.
+                                            Thank you for your feedback! I have submitted your form.
+```
 ## **Open/current issues with the chatbot**
 
+* 
 
 ## **Links**
 
