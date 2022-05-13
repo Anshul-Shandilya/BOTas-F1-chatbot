@@ -1,0 +1,169 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: user_requests_feedback_form
+  - action: feedback_form
+  - active_loop: feedback_form
+  - slot_was_set:
+    - requested_slot: firstName
+  - slot_was_set:
+    - firstName: anshul
+  - slot_was_set:
+    - requested_slot: lastName
+  - slot_was_set:
+    - lastName: kumar
+  - slot_was_set:
+    - requested_slot: feedback
+  - slot_was_set:
+    - feedback: OK
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_feedback_form
+  - action: action_feedback_form
+  - intent: greet
+  - action: utter_greet
+
+- story: interactive_story_2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: greet_reply_and_ask
+  - action: utter_greet_reply_with_question
+  - intent: user_asks_latest_race_result
+  - action: action_latest_race_result
+  - action: utter_anything_else
+  - intent: deny
+  - action: utter_no_reply
+
+- story: interactive_story_3
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: greet_reply_and_ask
+  - action: utter_greet_reply_with_question
+  - intent: affirm
+  - action: utter_reply_greet_yes
+  - intent: greet
+  - action: utter_greet
+  - intent: greet_reply_and_ask
+  - action: utter_greet_reply_with_question
+  - intent: demand_joke
+  - action: utter_pre_joke
+  - action: utter_joke
+  - intent: lame_jokes
+  - action: utter_lame_jokes
+  - intent: user_asks_latest_race_result
+  - action: action_latest_race_result
+  - action: utter_anything_else
+
+- story: interactive_story_4
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_greet_reply_no_question
+  - intent: user_denies_service
+  - action: utter_standby
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: greet_reply_and_ask
+  - action: utter_greet_reply_with_question
+  - intent: user_denies_service
+  - action: utter_standby
+  - intent: user_asks_agent_capability
+  - action: utter_agent_capability
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_greet_reply_no_question
+  - intent: user_denies_service
+  - action: utter_standby
+  - intent: greet
+  - action: utter_greet
+  - intent: greet_reply_and_ask
+  - action: utter_greet_reply_with_question
+  - intent: user_asks_agent_capability
+  - action: utter_agent_capability
+  - intent: user_standby
+  - action: utter_standby
+
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: greet_reply_and_ask
+  - action: utter_greet_reply_with_question
+  - intent: user_asks_agent_capability
+  - action: utter_agent_capability
+  - intent: user_standby
+  - action: utter_standby
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+  - intent: demand_joke
+  - action: utter_pre_joke
+  - action: utter_joke
+  - intent: lame_jokes
+  - action: utter_lame_jokes
+  - intent: user_asks_latest_race_result
+  - action: action_latest_race_result
+  - action: utter_anything_else
+  - intent: deny
+  - action: utter_no_reply
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+  - intent: user_asks_latest_race_schedule
+  - action: action_latest_race_schedule
+  - action: utter_anything_else
+  - intent: deny
+  - action: utter_no_reply
+  - intent: goodbye
+  - action: utter_goodbye

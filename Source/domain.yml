@@ -1,0 +1,132 @@
+version: '3.1'
+intents:
+- affirm
+- bot_challenge
+- demand_joke
+- deny
+- goodbye
+- greet
+- greet_reply_and_ask
+- inform
+- lame_jokes
+- mood_great
+- mood_unhappy
+- user_asks_agent_capability
+- user_asks_agent_information
+- user_asks_latest_qualify_result
+- user_asks_latest_race_result
+- user_asks_latest_race_schedule
+- user_denies_service
+- user_requests_feedback_form
+- user_standby
+- user_wants_another
+entities:
+- firstName
+- feedback
+- lastName
+slots:
+  firstName:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: firstName
+  lastName:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: lastName
+  feedback:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: feedback
+forms:
+  feedback_form:
+    required_slots:
+    - firstName
+    - lastName
+    - feedback
+responses:
+  utter_standby:
+  - text: Okie dokie
+  utter_no_reply:
+  - text: Cool! Let me know.
+  utter_greet:
+  - text: Hey! How are you?
+  - text: Holla! How you doin?
+  utter_greet_reply_no_question:
+  - text: Great! What can I do for you?
+  - text: Cool! What can I help you with?
+  utter_greet_reply_with_question:
+  - text: I'm great, thanks for asking! What can I do for you today?
+  - text: Thanks for asking, I'm fine. What can I do for you?
+  utter_cheer_up:
+  - text: 'This ought to cheer you up!:'
+    image: https://i.imgur.com/XHZH8SW.jpeg
+  utter_did_that_help:
+  - text: Did that help you?
+  utter_happy:
+  - text: I'm glad!!!
+  utter_goodbye:
+  - text: Bye bye
+  - text: see ya
+  utter_iamabot:
+  - text: I BOTas (get it?), a bot powered by Rasa.
+  utter_agent_capability:
+  - text: You can ask me about Formula 1 stuff. For example you can ask me to get the latest race results.
+  utter_feedback_form:
+  - text: |-
+      Name: {firstName} {lastName}
+      Feedback: {feedback}.
+  utter_ask_firstName:
+  - text: Your first name?
+  utter_ask_lastName:
+  - text: Your last name?
+  utter_ask_feedback:
+  - text: Your feedback?
+  utter_joke:
+  - text: Why was Harry Potter surprised when Ferrari won the F1 race? Because he expecto'd Petronas.
+  - text: Why did the F1 Racer get electrocuted after finishing 1 lap? Because he completed the circuit.
+  - text: Why the F1 driver doesn't get along with his crew? He has thrust issues.
+  - text: An F1 racer gets addicted to amphetamines. He soon felt the NEED for SPEED
+  - text: A F1 race driver got into an accident. He broke almost every single bone in his body. The doctors told him he would never drive again. He was absolutely shattered
+  - text: Why is the white bishop piece in chess the fastest? Because it's on F1.
+  - text: I'm obsessed with my F1 key. I think I need help.
+  - text: Guys getting ready to play darts ... 1 - "You any good with arrows?"\n2 - "...Erm, no."\n1 - "Neither is Damon Hill."
+  utter_lame_jokes:
+  - text: I know right? My creator chose them. (But they are all terrible tbh..... don't tell him I said that!)
+  utter_anything_else:
+  - text: Is there something else I can help you with?
+  utter_reply_greet_yes:
+  - text: What is it?
+  utter_pre_joke:
+  - text: Here's a joke for you.\n\n
+  utter_agent_information:
+  - text: My name is BOTas (get it?). I can retrieve information about Formula 1.
+actions:
+- action_feedback_form
+- action_latest_qualify_result
+- action_latest_race_result
+- action_latest_race_schedule
+- utter_agent_capability
+- utter_anything_else
+- utter_cheer_up
+- utter_did_that_help
+- utter_feedback_form
+- utter_goodbye
+- utter_greet
+- utter_greet_reply_no_question
+- utter_greet_reply_with_question
+- utter_happy
+- utter_joke
+- utter_lame_jokes
+- utter_no_reply
+- utter_pre_joke
+- utter_reply_greet_yes
+- utter_standby
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

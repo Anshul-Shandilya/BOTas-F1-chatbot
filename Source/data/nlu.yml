@@ -1,0 +1,336 @@
+version: "3.1"
+nlu:
+- intent: user_wants_another
+  examples: |
+    - another one
+    - another
+    - one more
+    - more
+- intent: user_denies_service
+  examples: |
+    - nothing really.
+    - nothing.
+    - nothing
+- intent: user_standby
+  examples: |
+    - ok
+    - okay
+    - cool
+    - great
+    - awesome
+    - sounds good
+    - sounds cool
+    - amazing
+    - Cool
+- intent: greet_reply_and_ask
+  examples: |
+    - I'm fine how are you?
+    - I'm fine and you
+    - im fine how about you
+    - im good how about you
+    - im good n you
+    - im gud, u?
+    - I'm fine. How you?
+    - Im fine, how are you
+    - im fine, what about you?
+    - im fine, how you?
+    - Good. How are you?
+    - im fine, how are you
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+    - Hi
+    - yo
+    - holla
+    - konichiva
+    - namaste
+    - you there?
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+    - Ciao
+    - later
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+    - Yes
+    - Yesssss. Thanks a lot that was funny
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+    - No
+    - nope
+    - Nope
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+    - Im fine
+    - I'm fine
+    - Great
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+    - im feeling sad
+    - feeling sad
+    - btw I feel sad.
+- intent: demand_joke
+  examples: |
+    - got a gag?
+    - could you tell me a joke?
+    - please give me a funny
+    - know any good puns?
+    - give me a wisecracker
+    - tell me of a good antic
+    - tell me a joke
+    - i want to hear a joke
+    - tell me another joke
+    - give me another one
+    - give me a good joke
+    - give me another joke
+    - oke, make me laugh one more time
+    - make me laugh
+    - jokes
+    - joke
+    - jok
+    - Anyways, can you tell me a joke?
+- intent: lame_jokes
+  examples: |
+    - your jokes are really lame
+    - lame...
+    - lame
+    - no laugh
+    - your jokes don't make me laugh
+    - your jokes are not funny
+    - not funny
+    - not funny at all
+    - lame jokes
+    - they are not really fun tbh
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+- intent: user_asks_agent_information
+  examples: |
+    - who are you?
+    - what is your name?
+    - what are you?
+- intent: user_asks_agent_capability
+  examples: |
+    - what can you do for me?
+    - what are you able to do?
+    - what are you capable of?
+    - why are you?
+    - what can you do
+    - what can you do for me tho...
+    - Not sure, what can you do for me?
+    - not sure, what can you do
+- intent: user_asks_latest_race_result
+  examples: |
+    - what was the latest race result?
+    - latest race result
+    - give me info about latest race result
+    - info about latest race result
+    - race result latest
+    - latest race
+    - can you get me the latest race results
+    - ok, can you get me the latest race results
+- intent: user_asks_latest_race_schedule
+  examples: |
+    - can you give me the latest season schedule?
+    - latest race schedule
+    - latest season schedule
+    - latest schedule
+    - show me the latest schedule
+    - show me latest schedule
+    - Can you get me the latest race schedule?
+- intent: user_asks_latest_qualify_result
+  examples: |
+    - what was the latest qualifying result?
+    - latest qualifying result
+    - give me info about latest qualifications
+    - info about latest race result
+    - qualifying result latest
+    - latest qualifications
+    - latest qualify
+    - latest qualifying
+- intent: user_requests_feedback_form
+  examples: |
+    - feedback form
+    - I want to fill in the feedback form
+    - I want to fill the feedback
+    - I want to give feeedback
+    - feedback
+    - Can I fill in the feedback?
+    - Can I fill the feedback form?
+- intent: inform
+  examples: |
+    - It was [good](feedback)
+    - It was [bad](feedback)
+    - It was [OK](feedback)
+    - [OK](feedback)
+    - [bad](feedback)
+    - [good](feedback)
+    - My name is [anshul](firstName)
+    - It's [sarthak](firstName)
+    - [john](firstName)
+    - [Kumar](lastName)
+    - [Smith](lastName)
+    - [Johnson](lastName)
+    - [Williams](lastName)
+    - [Jones](lastName)
+    - [Brown](lastName)
+    - [Davis](lastName)
+    - [Miller](lastName)
+    - [Wilson](lastName)
+    - [Moore](lastName)
+    - [Taylor](lastName)
+    - [Anderson](lastName)
+    - [Thomas](lastName)
+    - [Jackson](lastName)
+    - [White](lastName)
+    - [Harris](lastName)
+    - [Martin](lastName)
+    - [Thompson](lastName)
+    - [Garcia](lastName)
+    - [Martinez](lastName)
+    - [Robinson](lastName)
+    - [Clark](lastName)
+    - [Rodriguez](lastName)
+    - [Lewis](lastName)
+    - [Lee](lastName)
+    - [Walker](lastName)
+    - [Hall](lastName)
+    - [Allen](lastName)
+    - [Young](lastName)
+    - [Hernandez](lastName)
+    - [King](lastName)
+    - [Wright](lastName)
+    - [Lopez](lastName)
+    - [Hill](lastName)
+    - [Scott](lastName)
+    - [Green](lastName)
+    - [Adams](lastName)
+    - [Baker](lastName)
+    - [Gonzalez](lastName)
+    - [Nelson](lastName)
+    - [Carter](lastName)
+    - [Mitchell](lastName)
+    - [Perez](lastName)
+    - [Roberts](lastName)
+    - [Turner](lastName)
+    - [Phillips](lastName)
+    - [Campbell](lastName)
+    - [Parker](lastName)
+    - [Evans](lastName)
+    - [Edwards](lastName)
+    - [Collins](lastName)
+    - [Stewart](lastName)
+    - [Sanchez](lastName)
+    - [Morris](lastName)
+    - [Rogers](lastName)
+    - [Reed](lastName)
+    - [Morgan](lastName)
+    - [Bell](lastName)
+    - [Murphy](lastName)
+    - [Bailey](lastName)
+    - [Rivera](lastName)
+    - [Cooper](lastName)
+    - [Richardson](lastName)
+    - [Cox](lastName)
+    - [Howard](lastName)
+    - [Ward](lastName)
+    - [Torres](lastName)
+    - [Peterson](lastName)
+    - [Gray](lastName)
+    - [Ramiez](lastName)
+    - [James](lastName)
+    - [Watson](lastName)
+    - [Brooks](lastName)
+    - [Kelly](lastName)
+    - [Sanders](lastName)
+    - [Price](lastName)
+    - [Bennett](lastName)
+    - [Wood](lastName)
+    - [Barnes](lastName)
+    - [Ross](lastName)
+    - [Henderson](lastName)
+    - [Coleman](lastName)
+    - [Jenkins](lastName)
+    - [Perry](lastName)
+    - [Powell](lastName)
+    - [Long](lastName)
+    - [Patterson](lastName)
+    - [Hughes](lastName)
+    - [Flores](lastName)
+    - [Washington](lastName)
+    - [Butler](lastName)
+    - [Foster](lastName)
+    - [Gonzales](lastName)
+    - [Bryant](lastName)
+    - [Alexander](lastName)
+    - [Russell](lastName)
+    - [Griffin](lastName)
+    - [Diaz](lastName)
+    - [Hayes](lastName)
+    - [anshul](firstName)
+    - [kumar](lastName)
